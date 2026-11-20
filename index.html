@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DLKIP Electronics - новый логотип, фавикон, мерч и вёрстка брендбука (демо)</title>
+<link rel="icon" type="image/svg+xml" href="assets/dlkip-icon-orange.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--o:#f07d00;--o2:#e67700;--bg:#0a0a0a;--panel:#141414;--line:#262626;--txt:#f2f2f2;--mut:#9a9a9a;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+h1,h2,h3{font-family:'Exo 2',sans-serif;line-height:1.15}
+img{max-width:100%;display:block}
+a{color:var(--o)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* шапка */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,10,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:18px;height:64px}
+.hd img{height:30px;width:auto}
+.hd .who{font-size:12px;color:var(--mut);letter-spacing:.08em;text-transform:uppercase}
+nav{margin-left:auto;display:flex;gap:22px}
+nav a{color:var(--txt);text-decoration:none;font-size:14.5px;font-weight:500}
+nav a:hover{color:var(--o)}
+.btn{display:inline-block;background:var(--o);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:12px 22px;border-radius:10px;transition:.2s}
+.btn:hover{background:var(--o2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{border-color:var(--o);color:var(--o)}
+.hd .btn{padding:9px 16px;font-size:14px}
+.burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:9px 11px;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:#fff;margin:4px 0}
+/* hero */
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero .circuit{position:absolute;inset:0;opacity:.12;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative}
+.tag{display:inline-block;background:rgba(240,125,0,.14);color:var(--o);font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px;border:1px solid rgba(240,125,0,.35)}
+.hero h1{font-size:clamp(30px,4.2vw,50px);font-weight:800;margin:20px 0 18px}
+.hero h1 em{color:var(--o);font-style:normal}
+.hero p.sub{color:var(--mut);font-size:17px;max-width:520px;margin-bottom:30px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cta-note{font-size:13px;color:var(--mut);margin-top:12px}
+.hero-card{background:#000;border:1px solid var(--line);border-radius:22px;padding:44px 36px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.hero-card img{width:100%}
+/* секции */
+section{padding:84px 0}
+.sec-h{display:flex;align-items:baseline;gap:16px;margin-bottom:12px}
+.sec-h .n{font-family:'Exo 2';color:var(--o);font-weight:700;font-size:15px}
+.sec-h h2{font-size:clamp(24px,3vw,34px);font-weight:700}
+.sec-sub{color:var(--mut);max-width:640px;margin-bottom:36px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center}
+.card .lbl{font-size:12px;color:var(--mut);letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.card img{max-height:120px;width:auto}
+.card.tall img{max-height:200px}
+.card.light{background:#f5f5f5;border-color:#e2e2e2}
+.card.light .lbl{color:#777}
+.card.orange{background:var(--o);border-color:var(--o)}
+.card.orange .lbl{color:rgba(0,0,0,.6)}
+/* фавикон */
+.favi-row{display:flex;gap:34px;align-items:flex-end;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px}
+.favi{text-align:center}
+.favi img{margin:0 auto 10px}
+.favi span{font-size:12.5px;color:var(--mut)}
+/* мерч */
+.merch-board{border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+/* брендбук */
+.bb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.bb-grid img{border-radius:12px;border:1px solid var(--line)}
+.dl-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+/* футер */
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:13.5px}
+.demo-note{background:rgba(240,125,0,.1);border:1px solid rgba(240,125,0,.3);border-radius:12px;padding:16px 20px;font-size:14px;color:#e9c9a0;margin-top:60px}
+@media(max-width:900px){
+  .hero-grid,.grid2{grid-template-columns:1fr}
+  .grid3,.bb-grid{grid-template-columns:1fr 1fr}
+  nav{display:none;position:absolute;top:64px;left:0;right:0;background:#0d0d0d;flex-direction:column;padding:18px 24px;gap:14px;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  .burger{display:block}
+  .hd .btn{margin-left:0}
+  .hd .who{display:none}
+  .hd{gap:12px}
+}
+@media(max-width:560px){
+  .grid3,.bb-grid{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .hd .btn{padding:8px 12px;font-size:13px}
+  .hd img{height:26px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <img src="assets/dlkip-short-color-on-dark.svg" alt="DLKIP">
+    <span class="who">Логотип и брендбук</span>
+    <button class="burger" aria-label="Меню" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <nav>
+      <a href="#logo">Логотип</a>
+      <a href="#favicon">Фавикон</a>
+      <a href="#merch">Мерч</a>
+      <a href="#brandbook">Брендбук</a>
+    </nav>
+    <a class="btn" href="assets/Брендбук_DLKIP.pdf" download>Скачать PDF</a>
+  </div>
+</header>
+
+<div class="hero">
+  <svg class="circuit" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#f07d00" stroke-width="2" fill="none">
+      <path d="M0,140 H360 V340 H640"/><circle cx="640" cy="340" r="9" fill="#f07d00"/>
+      <path d="M1440,100 H1040 V300 H820"/><circle cx="820" cy="300" r="9" fill="#f07d00"/>
+      <path d="M0,720 H320 V520 H560"/><circle cx="560" cy="520" r="9" fill="#f07d00"/>
+      <path d="M1440,760 H1080 V560 H880"/><circle cx="880" cy="560" r="9" fill="#f07d00"/>
+    </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Демо по вашему заданию</span>
+      <h1>Новый логотип <em>DLKIP Electronics</em> - строго по вашему брендбуку</h1>
+      <p class="sub">Сохранил фирменную концепцию и палитру (оранжевый #f07d00, чёрный, белый). Подготовил знак-микросхему, фавикон, дизайн мерча и сверстал весь брендбук в Word и PDF.</p>
+      <div class="cta-row">
+        <a class="btn" href="#logo">Смотреть логотип</a>
+        <a class="btn ghost" href="assets/Брендбук_DLKIP.pdf" download>Скачать брендбук (PDF)</a>
+      </div>
+      <p class="cta-note">PDF открывается сразу; редактируемый Word-файл передам в работе вместе с векторными исходниками (SVG, PNG @1x/@2x/@3x).</p>
+    </div>
+    <div class="hero-card">
+      <img src="assets/dlkip-logo-two-color-dark.svg" alt="Логотип DLKIP Electronics">
+    </div>
+  </div>
+</div>
+
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-h"><span class="n">01</span><h2>Логотип: знак и версии</h2></div>
+    <p class="sec-sub">Графический знак - монограмма «DL» в форме микросхемы с контактными выводами: прямая связь с разработкой и производством электроники. Геометрия продолжает модульную стилистику фирменного начертания DLKIP.</p>
+    <div class="grid3">
+      <div class="card tall"><img src="assets/dlkip-icon-orange.svg" alt="Знак DL"><span class="lbl">Графический знак · фавикон, аватары</span></div>
+      <div class="card tall"><img src="assets/dlkip-short-color-on-light.svg" alt="Короткий логотип"><span class="lbl">Короткий логотип · шапка, соцсети</span></div>
+      <div class="card tall"><img src="assets/dlkip-stacked-color-on-light.svg" alt="Стековый логотип"><span class="lbl">Стековый · вывески, квадратные форматы</span></div>
+    </div>
+    <div style="height:20px"></div>
+    <div class="grid3">
+      <div class="card"><img src="assets/dlkip-logo-color-on-light.svg" alt=""><span class="lbl">Основная · светлый фон</span></div>
+      <div class="card"><img src="assets/dlkip-logo-color-on-dark.svg" alt=""><span class="lbl">Полноцветная · тёмный фон</span></div>
+      <div class="card"><img src="assets/dlkip-logo-two-color-dark.svg" alt=""><span class="lbl">Двухцветная · премиум</span></div>
+      <div class="card light"><img src="assets/dlkip-logo-mono-black.svg" alt=""><span class="lbl">Монохром чёрный · ч/б печать</span></div>
+      <div class="card"><img src="assets/dlkip-logo-mono-white.svg" alt=""><span class="lbl">Монохром белый · тёмные фоны</span></div>
+      <div class="card orange"><img src="assets/dlkip-logo-mono-white.svg" alt=""><span class="lbl">Монохром белый на фирменном оранжевом</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="favicon" style="background:#0e0e0e">
+  <div class="wrap">
+    <div class="sec-h"><span class="n">02</span><h2>Фавикон для сайта</h2></div>
+    <p class="sec-sub">Знак без текстовой части читается от 16 px. Пакет файлов закрывает браузеры, iOS, Android и PWA.</p>
+    <div class="favi-row">
+      <div class="favi"><img src="assets/favicon-32.png" width="16" alt=""><span>16 px</span></div>
+      <div class="favi"><img src="assets/favicon-32.png" width="32" alt=""><span>32 px</span></div>
+      <div class="favi"><img src="assets/favicon-192.png" width="84" alt=""><span>192 px · Android</span></div>
+      <div class="favi"><img src="assets/apple-touch-icon.png" width="110" alt=""><span>180 px · Apple Touch</span></div>
+      <div class="favi"><img src="assets/dlkip-icon-orange.svg" width="140" alt=""><span>SVG · мастер-файл</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="merch">
+  <div class="wrap">
+    <div class="sec-h"><span class="n">03</span><h2>Фирменный мерч</h2></div>
+    <p class="sec-sub">Восемь позиций на контрасте чёрной базы и фирменного оранжевого: футболка, поло, кепка, кружка, блокнот, ручка, шоппер, бейдж. Макеты готовы к адаптации под производство.</p>
+    <div class="grid2">
+      <div class="merch-board"><img src="assets/board-1.png" alt="Мерч DLKIP: футболка, поло, кепка, кружка"></div>
+      <div class="merch-board"><img src="assets/board-2.png" alt="Мерч DLKIP: блокнот, ручка, шоппер, бейдж"></div>
+    </div>
+  </div>
+</section>
+
+<section id="brandbook" style="background:#0e0e0e">
+  <div class="wrap">
+    <div class="sec-h"><span class="n">04</span><h2>Брендбук: полная вёрстка</h2></div>
+    <p class="sec-sub">Все страницы приведены к единому оформлению, утверждённое содержание сохранено. Новые разделы - логотип, фавикон и мерч - добавлены в свои места. 25 страниц А4, альбомная ориентация.</p>
+    <div class="bb-grid">
+      <img src="assets/p01.png" alt="Обложка брендбука">
+      <img src="assets/p07.png" alt="Раздел логотипа">
+      <img src="assets/p08.png" alt="Конструкция логотипа">
+      <img src="assets/p09.png" alt="Цветовые версии">
+      <img src="assets/p13.png" alt="Фавикон">
+      <img src="assets/p14.png" alt="Цветовая палитра">
+    </div>
+    <div class="dl-row">
+      <a class="btn" href="assets/Брендбук_DLKIP.pdf" download>Скачать брендбук (PDF, 1,5 МБ)</a>
+      <a class="btn ghost" href="#logo">Ещё раз к логотипу</a>
+    </div>
+    <p class="cta-note">Word-версия для редактирования и векторные исходники логотипа передаются вместе с заказом.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:#f2f2f2">Демонстрационный проект</b> по заданию «Создать логотип с нуля» (Kwork). Выполнено по брендбуку заказчика: фирменная концепция, палитра и содержание сохранены.</p>
+    <p style="margin-top:8px">Имя сотрудника на бейдже и подпись на ручке - условные placeholder-данные; контакты в брендбуке оставлены как в исходном документе («уточнить»).</p>
+  </div>
+</footer>
+
+</body>
+</html>
